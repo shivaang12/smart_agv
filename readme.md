@@ -18,3 +18,7 @@ MIT open-source license, see [license](https://opensource.org/licenses/MIT)
     - std_msgs
     - message_generation
     - geometry_msgs
+
+# SIP
+
+SIP process chart can be access [here](https://docs.google.com/spreadsheets/d/15FUiV2CVoGEMxKz0mKP8EMVmY0W706Poa8y_qtE8bmY/edit?usp=sharing)
