@@ -4,8 +4,8 @@
 ## Overview
 This is an smart AGV (Automated Guided Vehicle) project which can take commands from the end user, and navigate autonomously to perform a required task. This AGV is implemented in ROS Gazebo simulation environment using the TurtleBot as the base platform. A custom global planner was written as a plugin, and uses the A* algorithm for planning. SLAM was done prior on the environment to get a map for navigation. 
 
-## Author
-- Shivang Patel
+## Personnel
+This module was created by Shivang Patel as a final project for the University of Maryland course ENPM808X - Software Development for Robotics during the Fall 2018 semester.
 
 ## License
 MIT open-source license, see [license](https://opensource.org/licenses/MIT)
