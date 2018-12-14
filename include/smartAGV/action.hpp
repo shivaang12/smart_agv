@@ -36,16 +36,19 @@
 #include <geometry_msgs/Pose.h>
 #include <string>
 #include <smartAGV/navigation.hpp>
+#include <smartAGV/location.hpp>
 
 class Action {
  public:
+  enum act { ACT_MOVETO, ACT_STOPMOVETO};
+  Action() : action(0) {}
+  ~Action() {}
+  void intialize(ros::NodeHandle &);
+  void execute(int, const std::string &arg);
+ 
+ private:
   int action;
   ros::NodeHandle nodeHandle;
   Navigation naviCtrl;
- 
- private:
-  void intialize(ros::NodeHandle &);
-  void execute(int, const std::string &arg);
   void navigate(int, const std::string &arg);
 };
-

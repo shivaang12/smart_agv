@@ -39,9 +39,9 @@
 
 void SmartBOT::initialize(ros::NodeHandle &Nh) {}
 
-void SmartBOT::agvCallBack(const std_msgs::String::ConstPtr &strPtr) {}
+void SmartBOT::agvCallback(const std_msgs::String::ConstPtr &strPtr) {}
 
-void SmartBOT::agvService(
+bool SmartBOT::agvService(
     smartBOT::agvservice::Request &srvReq,
     smartBOT::agvservice::Response &srvRes
   ) {}

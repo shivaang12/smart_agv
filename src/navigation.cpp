@@ -42,27 +42,11 @@
 
 void Navigation::intialize(ros::NodeHandle &Nh) {}
 
-void Navigation::goTO(geometry_msgs::Pose) {}
+void Navigation::goTO(geometry_msgs::Pose &goal) {}
 
 void Navigation::abortMove(void) {}
-
-void Navigation::forward(void) {}
-
-void Navigation::back(void) {}
-
-void Navigation::left(void) {}
-
-void Navigation::right(void) {}
-
-void Navigation::stop(void) {}
 
 void Navigation::movebaseCallback(
     const actionlib::SimpleClientGoalState &goal,
     const move_base_msgs::MoveBaseResult::ConstPtr &mbPtr
   ) {}
-
-void Navigation::odomCallBack(const nav_msgs::Odometry::ConstPtr &odomPtr) {}
-
-void Navigation::timerCallback(const ros::TimerEvent &timeEvent) {}
-
-double Navigation::convert2degree(double) {}

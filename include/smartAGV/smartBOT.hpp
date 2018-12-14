@@ -39,12 +39,9 @@
 
 class SmartBOT {
  public:
+  SmartBOT(){}
+  ~SmartBOT(){}
   void initialize(ros::NodeHandle &);
-  void agvCallBack(const std_msgs::String::ConstPtr &);
-  void agvService(
-    smartAGV::agvservice::Request &,
-    smartAGV::agvservice::Response &
-  );
 
  private:
   ros::Subscribe agvSub;
@@ -52,4 +49,9 @@ class SmartBOT {
   ros::ServiceServer agvServer;
   Action action;
   ros::NodeHandle nodeHandle;
+  void agvCallback(const std_msgs::String::ConstPtr &);
+  bool agvService(
+    smartAGV::agvservice::Request &,
+    smartAGV::agvservice::Response &
+  );
 };
