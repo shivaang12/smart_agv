@@ -230,4 +230,20 @@ if(CATKIN_ENABLE_TESTING)
     testNavigation
     ${catkin_LIBRARIES})
   add_dependencies(testNavigation smartagv ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+
+  add_rostest_gtest(
+    testAction
+    test/smart_action.launch
+    test/test_action.cpp
+    test/test_class.cpp
+    src/action.cpp
+    src/navigation.cpp
+    )
+    # src/navigation.cpp
+  target_link_libraries(
+    testAction
+    ${catkin_LIBRARIES})
+  add_dependencies(testAction smartagv ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+
+
   endif()
