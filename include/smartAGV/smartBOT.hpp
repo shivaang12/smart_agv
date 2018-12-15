@@ -34,7 +34,7 @@
 #pragma once
 #include <ros/ros.h>
 #include <std_msgs/String.h>
-#include <smartAGV/agvservice.h>
+#include <smartagv/agvservice.h>
 #include <smartAGV/action.hpp>
 
 class SmartBOT {
@@ -44,14 +44,14 @@ class SmartBOT {
   void initialize(ros::NodeHandle &);
 
  private:
-  ros::Subscribe agvSub;
+  ros::Subscriber agvSub;
   ros::Publisher agvPub;
   ros::ServiceServer agvServer;
   Action action;
   ros::NodeHandle nodeHandle;
   void agvCallback(const std_msgs::String::ConstPtr &);
   bool agvService(
-    smartAGV::agvservice::Request &,
-    smartAGV::agvservice::Response &
+    smartagv::agvservice::Request &,
+    smartagv::agvservice::Response &
   );
 };

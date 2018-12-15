@@ -33,7 +33,7 @@
 
 #include <ros/ros.h>
 #include <std_msgs/String.h>
-#include <smartAGV/agvservice.h>
+#include <smartagv/agvservice.h>
 #include <smartAGV/action.hpp>
 #include <smartAGV/smartBOT.hpp>
 
@@ -42,6 +42,6 @@ void SmartBOT::initialize(ros::NodeHandle &Nh) {}
 void SmartBOT::agvCallback(const std_msgs::String::ConstPtr &strPtr) {}
 
 bool SmartBOT::agvService(
-    smartBOT::agvservice::Request &srvReq,
-    smartBOT::agvservice::Response &srvRes
+    smartagv::agvservice::Request &srvReq,
+    smartagv::agvservice::Response &srvRes
   ) {}
