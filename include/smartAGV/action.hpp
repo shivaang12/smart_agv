@@ -43,12 +43,12 @@ class Action {
   enum act { ACT_MOVETO, ACT_STOPMOVETO};
   Action() : action(0) {}
   ~Action() {}
-  void intialize(ros::NodeHandle &);
-  void execute(int, const std::string &arg);
+  void initialize(ros::NodeHandle &);
+  void execute(int, const std::string &arg="");
  
  private:
   int action;
   ros::NodeHandle nodeHandle;
-  Navigation naviCtrl;
+  Navigation nav;
   void navigate(int, const std::string &arg);
 };

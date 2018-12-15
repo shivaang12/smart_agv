@@ -31,11 +31,58 @@
  *  @author Shivang Patel
 */
 
+#include <string>
 #include <ros/ros.h>
 #include <geometry_msgs/Pose.h>
-#include <string>
+#include <smartAGV/navigation.hpp>
 #include <smartAGV/action.hpp>
 
-void Action::intialize(ros::NodeHandle &Nh) {}
-void Action::execute(int, const std::string &arg) {}
-void Action::navigate(int, const std::string &arg) {}
+void Action::initialize(ros::NodeHandle &n) {
+  nodeHandle = n;
+  nav.initialize(nodeHandle);
+}
+void Action::execute(int act, const std::string &arg) {
+  std::stringstream ss;
+  action = act;
+
+  ROS_INFO_STREAM("Action::" << action << " arg::" << arg);
+
+  navigate(action, arg);
+  return;
+}
+void Action::navigate(int act, const std::string &arg) {
+  geometry_msgs::Pose goal;
+
+  struct Location locationA(std::string("rest pos"), 0.0, 0.0, 0.0, 0.0, 0.0,
+                            0.950, 0.312);
+  struct Location locationB(std::string("storage"), -1.38, 4.43, 0.0, 0.0, 0.0,
+                            0.73, 0.68);
+  struct Location locationC(std::string("shop"), 3.60, 4.07, 0.0, 0.0, 0.0,
+                            0.80, 0.59);
+
+  std::vector<Location> locations;
+  locations.push_back(locationA);
+  locations.push_back(locationB);
+  locations.push_back(locationC);
+
+  if (action == ACT_MOVETO) {
+    for (int i = 0; i < locations.size(); ++i) {
+      if (arg.find(locations[i].loc) != std::string::npos) {
+        ROS_INFO_STREAM("Action:: navigate move to " << locations[i].loc);
+        goal.position.x = locations[i].pointX;
+        goal.position.y = locations[i].pointY;
+        goal.position.z = locations[i].pointZ;
+        goal.orientation.x = locations[i].orientationX;
+        goal.orientation.y = locations[i].orientationY;
+        goal.orientation.z = locations[i].orientationZ;
+        goal.orientation.w = locations[i].orientationW;
+        nav.goTO(goal);
+        break;
+      }
+    }
+  } else {
+    nav.abortMove();
+  }
+
+  return;
+}
