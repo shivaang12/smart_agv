@@ -1,17 +1,25 @@
 cmake_minimum_required(VERSION 2.8.3)
-project(smartAGV)
+project(smartagv)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
-# add_compile_options(-std=c++11)
+add_compile_options(-std=c++11)
 
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
-  geometry_msgs
-  message_generation
-  roscpp
-  std_msgs
+actionlib
+geometry_msgs
+message_generation
+nav_msgs
+move_base_msgs
+roscpp
+std_msgs
+tf
+nav_core
+base_local_planner
+actionlib_msgs
+genmsg
 )
 
 ## System dependencies are found with CMake's conventions
@@ -55,11 +63,10 @@ find_package(catkin REQUIRED COMPONENTS
 # )
 
 ## Generate services in the 'srv' folder
-# add_service_files(
-#   FILES
-#   Service1.srv
-#   Service2.srv
-# )
+add_service_files(
+  FILES
+  agvservice.srv
+)
 
 ## Generate actions in the 'action' folder
 # add_action_files(
@@ -69,10 +76,10 @@ find_package(catkin REQUIRED COMPONENTS
 # )
 
 ## Generate added messages and services with any dependencies listed here
-# generate_messages(
-#   DEPENDENCIES
-#   geometry_msgs#   std_msgs
-# )
+generate_messages(
+  DEPENDENCIES
+  std_msgs
+)
 
 ################################################
 ## Declare ROS dynamic reconfigure parameters ##
@@ -106,7 +113,7 @@ find_package(catkin REQUIRED COMPONENTS
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES smartAGV
-#  CATKIN_DEPENDS geometry_msgs message_generation roscpp std_msgs
+ CATKIN_DEPENDS geometry_msgs message_generation roscpp std_msgs
 #  DEPENDS system_lib
 )
 
@@ -117,8 +124,8 @@ catkin_package(
 ## Specify additional locations of header files
 ## Your package locations should be listed before other locations
 include_directories(
-# include
   ${catkin_INCLUDE_DIRS}
+  include
 )
 
 ## Declare a C++ library
@@ -185,6 +192,15 @@ include_directories(
 #   # myfile2
 #   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 # )
+
+add_executable(smartagv
+  src/navigation.cpp
+  src/action.cpp
+  src/smartBOT.cpp
+)
+
+add_dependencies(smartagv ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(smartagv ${catkin_LIBRARIES})
 
 #############
 ## Testing ##
