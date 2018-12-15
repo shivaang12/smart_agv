@@ -261,5 +261,15 @@ if(CATKIN_ENABLE_TESTING)
     ${catkin_LIBRARIES})
   add_dependencies(testSmartbot smartagv ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
-
+  add_rostest_gtest(
+    testAstar
+    test/smart_astar.launch
+    test/test_astar.cpp
+    src/RAstar.cpp
+    )
+    # src/navigation.cpp
+  target_link_libraries(
+    testAstar
+    ${catkin_LIBRARIES})
+  add_dependencies(testAstar smartagv ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
   endif()
