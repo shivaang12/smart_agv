@@ -155,6 +155,15 @@ TEST(TestServiceBot, testMoveToCommand) {
 
   // confirm goal pose is expected
   EXPECT_EQ(0, std::memcmp(&varGoal, &actGoal, sizeof(varGoal)));
+
+  // test cancel command
+  msg.data = "cancel,";
+  pub.publish(msg);
+
+  loop_rate.sleep();
+
+  // confirm goal ID is cancelled
+  EXPECT_STREQ(testVar.goalID.c_str(), testVar.cancelID.c_str());
 }
 
 int main(int argc, char **argv) {
