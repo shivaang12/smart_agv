@@ -39,14 +39,37 @@
 #include <move_base_msgs/MoveBaseAction.h>
 #include <actionlib/client/simple_action_client.h>
 #include <smartAGV/navigation.hpp>
+#include <iostream>
 
-void Navigation::intialize(ros::NodeHandle &Nh) {}
+void Navigation::initialize(ros::NodeHandle &n) {
+  ROS_INFO_STREAM("Navigation::initialize");
+  movebaseCmdVelPub =
+      n.advertise<geometry_msgs::Twist>("/mobile_base/commands/velocity", 1000);
+}
 
-void Navigation::goTO(geometry_msgs::Pose &goal) {}
+void Navigation::goTO(geometry_msgs::Pose &goal) {
+  move_base_msgs::MoveBaseGoal mbGoal;
 
-void Navigation::abortMove(void) {}
+  mbGoal.target_pose.header.frame_id = "map";
+  mbGoal.target_pose.pose = goal;
+  mbClient.sendGoal(mbGoal,
+                boost::bind(&Navigation::movebaseCallback, this, _1, _2),
+                MoveBaseClient::SimpleActiveCallback());
+  return;
+}
+
+void Navigation::abortMove(void) {
+  ROS_INFO_STREAM("cancel moving to goal");
+  mbClient.cancelGoal();
+  return;
+}
 
 void Navigation::movebaseCallback(
-    const actionlib::SimpleClientGoalState &goal,
-    const move_base_msgs::MoveBaseResult::ConstPtr &mbPtr
-  ) {}
+    const actionlib::SimpleClientGoalState &state,
+    const move_base_msgs::MoveBaseResult::ConstPtr &result) {
+  if (state == actionlib::SimpleClientGoalState::SUCCEEDED) {
+    ROS_INFO_STREAM("NAVIGATION:: BASE SUCCEEDED TO MOVE TO GOAL");
+  } else {
+    ROS_INFO_STREAM("NAVIGATION:: FAILED TO MOVE TO GOAL");
+  }
+}

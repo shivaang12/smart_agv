@@ -31,7 +31,7 @@
  *
  *  @author Shivang Patel
  */
-
+#pragma once
 #include <actionlib/client/simple_action_client.h>
 #include <geometry_msgs/Twist.h>
 #include <move_base_msgs/MoveBaseAction.h>
@@ -53,7 +53,7 @@ typedef actionlib::SimpleActionClient<move_base_msgs::MoveBaseAction>
 class Navigation {
 public:
   Navigation() : mbClient("move_base", true) {}
-  void intialize(ros::NodeHandle &);
+  void initialize(ros::NodeHandle &);
   void goTO(geometry_msgs::Pose &);
   void abortMove(void);
 
