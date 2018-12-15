@@ -1,0 +1,4 @@
+<launch>
+  <node pkg="smartagv" name="smartagv" type="smartagv" output="screen"/>  
+  <test pkg="smartagv" test-name="testSmartbot" type="testSmartbot" />
+</launch>
