@@ -197,6 +197,7 @@ add_executable(smartagv
   src/navigation.cpp
   src/action.cpp
   src/smartBOT.cpp
+  src/main.cpp
 )
 
 add_dependencies(smartagv ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
