@@ -202,6 +202,7 @@ add_executable(smartagv
 
 add_dependencies(smartagv ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 target_link_libraries(smartagv ${catkin_LIBRARIES})
+add_library(relaxed_astar_lib src/RAstar.cpp)
 
 #############
 ## Testing ##
