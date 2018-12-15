@@ -1,5 +1,6 @@
 # Smart AGV
-[![Build Status](https://travis-ci.org/shivaang12/Smart-AGV.svg?branch=master)](https://travis-ci.org/shivaang12/Smart-AGV)[![Coverage Status](https://coveralls.io/repos/github/shivaang12/Smart-AGV/badge.svg?branch=master)](https://coveralls.io/github/shivaang12/Smart-AGV?branch=master)
+[![Build Status](https://travis-ci.org/shivaang12/smart_agv.svg?branch=master)](https://travis-ci.org/shivaang12/smart_agv)
+[![Coverage Status](https://coveralls.io/repos/github/shivaang12/smart_agv/badge.svg?branch=master)](https://coveralls.io/github/shivaang12/smart_agv?branch=master)
 
 ## Overview
 This is an smart AGV (Automated Guided Vehicle) project which can take commands from the end user, and navigate autonomously to perform a required task. This AGV is implemented in ROS Gazebo simulation environment using the TurtleBot as the base platform. A custom global planner was written as a plugin, and uses the A* algorithm for planning. SLAM was done prior on the environment to get a map for navigation. 
