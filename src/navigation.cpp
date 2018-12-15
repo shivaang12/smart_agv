@@ -69,7 +69,5 @@ void Navigation::movebaseCallback(
     const move_base_msgs::MoveBaseResult::ConstPtr &result) {
   if (state == actionlib::SimpleClientGoalState::SUCCEEDED) {
     ROS_INFO_STREAM("NAVIGATION:: BASE SUCCEEDED TO MOVE TO GOAL");
-  } else {
-    ROS_INFO_STREAM("NAVIGATION:: FAILED TO MOVE TO GOAL");
   }
 }

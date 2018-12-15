@@ -56,10 +56,10 @@ public:
   void initialize(ros::NodeHandle &);
   void goTO(geometry_msgs::Pose &);
   void abortMove(void);
+  void movebaseCallback(const actionlib::SimpleClientGoalState &,
+                        const move_base_msgs::MoveBaseResult::ConstPtr &);
 
 private:
   ros::Publisher movebaseCmdVelPub;
   MoveBaseClient mbClient;
-  void movebaseCallback(const actionlib::SimpleClientGoalState &,
-                        const move_base_msgs::MoveBaseResult::ConstPtr &);
 };
