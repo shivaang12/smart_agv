@@ -340,7 +340,17 @@ TEST(TestAstar, testIsFree) {
     EXPECT_EQ(false, plan.isFree(id));
     }
 
-
+/**
+ *   @brief  Testing Inititalization
+ *
+ *   @param  none
+ *   @return none
+*/
+TEST(TestAstar, testInit1) {
+    ros::NodeHandle n;
+    RAstar_planner::RAstarPlannerROS planner(n);
+    EXPECT_EQ(0, planner.originX);
+}
 
 /*
  *   @brief  unit test entrypoint
