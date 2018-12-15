@@ -214,3 +214,20 @@ target_link_libraries(smartagv ${catkin_LIBRARIES})
 
 ## Add folders to be run by python nosetests
 # catkin_add_nosetests(test)
+if(CATKIN_ENABLE_TESTING)
+  find_package(rostest REQUIRED)
+
+  set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -g -O0 --coverage")
+  add_rostest_gtest(
+    testNavigation
+    test/smart_navigation.launch
+    test/test_navigation.cpp
+    test/test_class.cpp
+    src/navigation.cpp
+    )
+    # src/navigation.cpp
+  target_link_libraries(
+    testNavigation
+    ${catkin_LIBRARIES})
+  add_dependencies(testNavigation smartagv ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+  endif()
