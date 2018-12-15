@@ -134,6 +134,15 @@ TEST(TestNavigation, testAbortMoveFunction) {
   EXPECT_STREQ(testVar.goalID.c_str(), testVar.cancelID.c_str());
 }
 
+TEST(TestNavigation, testCallback) {
+  ros::NodeHandle n;
+  Navigation nav;
+  actionlib::SimpleClientGoalState state = actionlib::SimpleClientGoalState::SUCCEEDED;
+  move_base_msgs::MoveBaseResult::ConstPtr result = NULL;
+  nav.initialize(n);
+  nav.movebaseCallback(state, result);
+}
+
 int main(int argc, char **argv) {
   ros::init(argc, argv, "test_agv_navigation");
   ::testing::InitGoogleTest(&argc, argv);
