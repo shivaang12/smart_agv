@@ -5,6 +5,8 @@
 ## Overview
 This is an smart AGV (Automated Guided Vehicle) project which can take commands from the end user, and navigate autonomously to perform a required task. This AGV is implemented in ROS Gazebo simulation environment using the TurtleBot as the base platform. A custom global planner was written as a plugin, and uses the A* algorithm for planning. SLAM was done prior on the environment to get a map for navigation.
 
+The youtube video for this project can be found [here](https://youtu.be/ZfPYKyFYQwg).
+
 ## Algorithm
 The algorithm used in this package, Astar,  is optimal given the known environement. The AGV can traverse avoiding static obstacles. It recieves goal position and uses the current information on the environement to find the shortest path possible while avoiding the obstacles.
 
