@@ -59,7 +59,9 @@ $ roslaunch smartagv agv_demo.launch
 ```
 This will launch gazebo simulator and in it one can see turtlebot spawned in a small warehouse.
 
-In this picture, there are there predefined areas where AGV can be traversed through commands.
+![alt-text](map/world_2.png)
+
+In this picture, there are three predefined areas where AGV can be traversed through commands.
 - storage
 - shop
 - rest pos
