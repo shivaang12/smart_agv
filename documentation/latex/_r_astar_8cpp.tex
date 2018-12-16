@@ -1,0 +1,78 @@
+\hypertarget{_r_astar_8cpp}{}\section{src/\+R\+Astar.cpp File Reference}
+\label{_r_astar_8cpp}\index{src/\+R\+Astar.\+cpp@{src/\+R\+Astar.\+cpp}}
+
+
+Implementation of class R\+Astar\+Planner\+R\+OS.  
+
+
+{\ttfamily \#include $<$netdb.\+h$>$}\\*
+{\ttfamily \#include $<$netinet/in.\+h$>$}\\*
+{\ttfamily \#include $<$pluginlib/class\+\_\+list\+\_\+macros.\+h$>$}\\*
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$string.\+h$>$}\\*
+{\ttfamily \#include $<$sys/socket.\+h$>$}\\*
+{\ttfamily \#include $<$sys/types.\+h$>$}\\*
+{\ttfamily \#include $<$unistd.\+h$>$}\\*
+{\ttfamily \#include $<$smart\+A\+G\+V/\+R\+Astar.\+h$>$}\\*
+{\ttfamily \#include $<$set$>$}\\*
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include $<$algorithm$>$}\\*
+{\ttfamily \#include $<$fstream$>$}\\*
+{\ttfamily \#include $<$iomanip$>$}\\*
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$limits$>$}\\*
+{\ttfamily \#include $<$vector$>$}\\*
+Include dependency graph for R\+Astar.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_r_astar_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespace_r_astar__planner}{R\+Astar\+\_\+planner}
+\begin{DoxyCompactList}\small\item\em Class definition of global planner class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries P\+L\+U\+G\+I\+N\+L\+I\+B\+\_\+\+E\+X\+P\+O\+R\+T\+\_\+\+C\+L\+A\+SS} (\hyperlink{class_r_astar__planner_1_1_r_astar_planner_r_o_s}{R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+OS}, nav\+\_\+core\+::\+Base\+Global\+Planner) int value\hypertarget{_r_astar_8cpp_a3665a02c79d594f7eea74f8a4a44570e}{}\label{_r_astar_8cpp_a3665a02c79d594f7eea74f8a4a44570e}
+
+\item 
+int {\bfseries clock\+\_\+gettime} (clockid\+\_\+t clk\+\_\+id, struct timespect $\ast$tp)\hypertarget{_r_astar_8cpp_a6809e130ecd9478df9ca56b4bceb8487}{}\label{_r_astar_8cpp_a6809e130ecd9478df9ca56b4bceb8487}
+
+\item 
+timespec {\bfseries diff} (timespec start, timespec end)\hypertarget{_r_astar_8cpp_a5959b2e100c03e81bd1c5049adf30165}{}\label{_r_astar_8cpp_a5959b2e100c03e81bd1c5049adf30165}
+
+\item 
+vector$<$ int $>$ {\bfseries find\+Free\+Neighbor\+Cell} (int Cell\+ID)\hypertarget{_r_astar_8cpp_af804add4ce710e7988ca555b5b2c6d46}{}\label{_r_astar_8cpp_af804add4ce710e7988ca555b5b2c6d46}
+
+\item 
+bool {\bfseries operator$<$} (\hyperlink{structcells}{cells} const \&c1, \hyperlink{structcells}{cells} const \&c2)\hypertarget{_r_astar_8cpp_afc1e1b2aaaea6f932eed0b69880a7674}{}\label{_r_astar_8cpp_afc1e1b2aaaea6f932eed0b69880a7674}
+
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int {\bfseries map\+Size}\hypertarget{_r_astar_8cpp_a298f4debf9e9db57dcaa736916e4b451}{}\label{_r_astar_8cpp_a298f4debf9e9db57dcaa736916e4b451}
+
+\item 
+float {\bfseries infinity} = std\+::numeric\+\_\+limits$<$float$>$\+::infinity()\hypertarget{_r_astar_8cpp_a8bb5664c6d1d0848c059844294c05988}{}\label{_r_astar_8cpp_a8bb5664c6d1d0848c059844294c05988}
+
+\item 
+float {\bfseries t\+Break}\hypertarget{_r_astar_8cpp_a97faa0177f9a552ae6bc6a7cc967136f}{}\label{_r_astar_8cpp_a97faa0177f9a552ae6bc6a7cc967136f}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Implementation of class R\+Astar\+Planner\+R\+OS. 
+
+This file contains implementation of class R\+Astar\+Planner\+R\+OS which navigates robot/\+A\+GV using Astar algorithm.
+
+\begin{DoxyAuthor}{Author}
+Shivang Patel 
+\end{DoxyAuthor}

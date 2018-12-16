@@ -1,0 +1,124 @@
+\hypertarget{class_navigation}{}\section{Navigation Class Reference}
+\label{class_navigation}\index{Navigation@{Navigation}}
+
+
+Class definition of \hyperlink{class_navigation}{Navigation} class.  
+
+
+
+
+{\ttfamily \#include $<$navigation.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_navigation_a81fdffdefe46340da5fa6c570066b42b}{Navigation} ()
+\begin{DoxyCompactList}\small\item\em Constructor of \hyperlink{class_navigation}{Navigation} class. \end{DoxyCompactList}\item 
+void \hyperlink{class_navigation_a216797e927d980c6ae3616894dd5cc22}{initialize} (ros\+::\+Node\+Handle \&)
+\begin{DoxyCompactList}\small\item\em This method intializes the default parametres for the classes. \end{DoxyCompactList}\item 
+void \hyperlink{class_navigation_ab4eb05b112c5704eee596f05a31ac683}{go\+TO} (geometry\+\_\+msgs\+::\+Pose \&)
+\begin{DoxyCompactList}\small\item\em Send goal to movebase to navigate robot to goal location. \end{DoxyCompactList}\item 
+void \hyperlink{class_navigation_a0e923f3dccd8ff402f697659b1a99a56}{abort\+Move} (void)
+\begin{DoxyCompactList}\small\item\em This methods helps to abort the current goal task navigation. \end{DoxyCompactList}\item 
+void \hyperlink{class_navigation_a12bd31cca5e1632803d9e18811465761}{movebase\+Callback} (const actionlib\+::\+Simple\+Client\+Goal\+State \&, const move\+\_\+base\+\_\+msgs\+::\+Move\+Base\+Result\+::\+Const\+Ptr \&)
+\begin{DoxyCompactList}\small\item\em This is as Callback function to receive navigation result from movebase. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Class definition of \hyperlink{class_navigation}{Navigation} class. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Navigation@{Navigation}!Navigation@{Navigation}}
+\index{Navigation@{Navigation}!Navigation@{Navigation}}
+\subsubsection[{\texorpdfstring{Navigation()}{Navigation()}}]{\setlength{\rightskip}{0pt plus 5cm}Navigation\+::\+Navigation (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{class_navigation_a81fdffdefe46340da5fa6c570066b42b}{}\label{class_navigation_a81fdffdefe46340da5fa6c570066b42b}
+
+
+Constructor of \hyperlink{class_navigation}{Navigation} class. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+
+
+\subsection{Member Function Documentation}
+\index{Navigation@{Navigation}!abort\+Move@{abort\+Move}}
+\index{abort\+Move@{abort\+Move}!Navigation@{Navigation}}
+\subsubsection[{\texorpdfstring{abort\+Move(void)}{abortMove(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void Navigation\+::abort\+Move (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{class_navigation_a0e923f3dccd8ff402f697659b1a99a56}{}\label{class_navigation_a0e923f3dccd8ff402f697659b1a99a56}
+
+
+This methods helps to abort the current goal task navigation. 
+
+param\mbox{[}in\mbox{]} none
+
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\index{Navigation@{Navigation}!go\+TO@{go\+TO}}
+\index{go\+TO@{go\+TO}!Navigation@{Navigation}}
+\subsubsection[{\texorpdfstring{go\+T\+O(geometry\+\_\+msgs\+::\+Pose \&)}{goTO(geometry_msgs::Pose &)}}]{\setlength{\rightskip}{0pt plus 5cm}void Navigation\+::go\+TO (
+\begin{DoxyParamCaption}
+\item[{geometry\+\_\+msgs\+::\+Pose \&}]{goal}
+\end{DoxyParamCaption}
+)}\hypertarget{class_navigation_ab4eb05b112c5704eee596f05a31ac683}{}\label{class_navigation_ab4eb05b112c5704eee596f05a31ac683}
+
+
+Send goal to movebase to navigate robot to goal location. 
+
+param\mbox{[}in\mbox{]} geometry\+\_\+msgs\+::\+Pose \+: Goal position.
+
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\index{Navigation@{Navigation}!initialize@{initialize}}
+\index{initialize@{initialize}!Navigation@{Navigation}}
+\subsubsection[{\texorpdfstring{initialize(ros\+::\+Node\+Handle \&)}{initialize(ros::NodeHandle &)}}]{\setlength{\rightskip}{0pt plus 5cm}void Navigation\+::initialize (
+\begin{DoxyParamCaption}
+\item[{ros\+::\+Node\+Handle \&}]{n}
+\end{DoxyParamCaption}
+)}\hypertarget{class_navigation_a216797e927d980c6ae3616894dd5cc22}{}\label{class_navigation_a216797e927d980c6ae3616894dd5cc22}
+
+
+This method intializes the default parametres for the classes. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em none} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\index{Navigation@{Navigation}!movebase\+Callback@{movebase\+Callback}}
+\index{movebase\+Callback@{movebase\+Callback}!Navigation@{Navigation}}
+\subsubsection[{\texorpdfstring{movebase\+Callback(const actionlib\+::\+Simple\+Client\+Goal\+State \&, const move\+\_\+base\+\_\+msgs\+::\+Move\+Base\+Result\+::\+Const\+Ptr \&)}{movebaseCallback(const actionlib::SimpleClientGoalState &, const move_base_msgs::MoveBaseResult::ConstPtr &)}}]{\setlength{\rightskip}{0pt plus 5cm}void Navigation\+::movebase\+Callback (
+\begin{DoxyParamCaption}
+\item[{const actionlib\+::\+Simple\+Client\+Goal\+State \&}]{state, }
+\item[{const move\+\_\+base\+\_\+msgs\+::\+Move\+Base\+Result\+::\+Const\+Ptr \&}]{result}
+\end{DoxyParamCaption}
+)}\hypertarget{class_navigation_a12bd31cca5e1632803d9e18811465761}{}\label{class_navigation_a12bd31cca5e1632803d9e18811465761}
+
+
+This is as Callback function to receive navigation result from movebase. 
+
+param\mbox{[}in\mbox{]} actionlib\+::\+Simple\+Client\+Goal\+State \+: Goal state. param\mbox{[}in\mbox{]} move\+\_\+base\+\_\+msgs\+::\+Move\+Base\+Result\+::\+Const\+Ptr \+: result in move base. \begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/smart\+A\+G\+V/\hyperlink{navigation_8hpp}{navigation.\+hpp}\item 
+src/\hyperlink{navigation_8cpp}{navigation.\+cpp}\end{DoxyCompactItemize}

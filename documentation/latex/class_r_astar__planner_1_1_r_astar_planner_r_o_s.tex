@@ -1,0 +1,637 @@
+\hypertarget{class_r_astar__planner_1_1_r_astar_planner_r_o_s}{}\section{R\+Astar\+\_\+planner\+:\+:R\+Astar\+Planner\+R\+OS Class Reference}
+\label{class_r_astar__planner_1_1_r_astar_planner_r_o_s}\index{R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+OS@{R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+OS}}
+
+
+Inheritance diagram for R\+Astar\+\_\+planner\+:\+:R\+Astar\+Planner\+R\+OS\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=256pt]{class_r_astar__planner_1_1_r_astar_planner_r_o_s__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for R\+Astar\+\_\+planner\+:\+:R\+Astar\+Planner\+R\+OS\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=256pt]{class_r_astar__planner_1_1_r_astar_planner_r_o_s__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\bfseries R\+Astar\+Planner\+R\+OS} (ros\+::\+Node\+Handle \&)\hypertarget{class_r_astar__planner_1_1_r_astar_planner_r_o_s_a7ab03997ec15cc3f6ad7bf9969ba8a5d}{}\label{class_r_astar__planner_1_1_r_astar_planner_r_o_s_a7ab03997ec15cc3f6ad7bf9969ba8a5d}
+
+\item 
+{\bfseries R\+Astar\+Planner\+R\+OS} (std\+::string name, costmap\+\_\+2d\+::\+Costmap2\+D\+R\+OS $\ast$costmap\+\_\+ros)\hypertarget{class_r_astar__planner_1_1_r_astar_planner_r_o_s_abc05123045762f13f17b45d0c491034b}{}\label{class_r_astar__planner_1_1_r_astar_planner_r_o_s_abc05123045762f13f17b45d0c491034b}
+
+\item 
+void \hyperlink{class_r_astar__planner_1_1_r_astar_planner_r_o_s_aed71ff1907cf853c7e49e78d3f82a94b}{initialize} (std\+::string name, costmap\+\_\+2d\+::\+Costmap2\+D\+R\+OS $\ast$costmap\+\_\+ros)
+\begin{DoxyCompactList}\small\item\em Initialize planner. \end{DoxyCompactList}\item 
+bool \hyperlink{class_r_astar__planner_1_1_r_astar_planner_r_o_s_acdc8059b6324f030c47ec2322f69f658}{make\+Plan} (const geometry\+\_\+msgs\+::\+Pose\+Stamped \&start, const geometry\+\_\+msgs\+::\+Pose\+Stamped \&goal, std\+::vector$<$ geometry\+\_\+msgs\+::\+Pose\+Stamped $>$ \&plan)
+\begin{DoxyCompactList}\small\item\em Create a plan given a start and goal. \end{DoxyCompactList}\item 
+void \hyperlink{class_r_astar__planner_1_1_r_astar_planner_r_o_s_abbc4c3daf28590f0d5e45c8227b7ff9e}{get\+Corrdinate} (float \&x, float \&y)
+\begin{DoxyCompactList}\small\item\em Get cooridnate based on x,y position and origin location. \end{DoxyCompactList}\item 
+int \hyperlink{class_r_astar__planner_1_1_r_astar_planner_r_o_s_a50f7adc635522b9ea7f5348870b7ca6e}{convert\+To\+Cell\+Index} (float x, float y)
+\begin{DoxyCompactList}\small\item\em Get cell index based on x,y and resolution. \end{DoxyCompactList}\item 
+void \hyperlink{class_r_astar__planner_1_1_r_astar_planner_r_o_s_a1046296d428b694e517ef25cac423846}{convert\+To\+Coordinate} (int index, float \&x, float \&y)
+\begin{DoxyCompactList}\small\item\em Convert to coordinate base on x,y, origin location, and id index. \end{DoxyCompactList}\item 
+bool \hyperlink{class_r_astar__planner_1_1_r_astar_planner_r_o_s_a1d3f1b7aed836e648645dd696823193b}{is\+Cell\+Inside\+Map} (float x, float y)
+\begin{DoxyCompactList}\small\item\em Check if cell is in the map based on resolution, width, and height of map. \end{DoxyCompactList}\item 
+void \hyperlink{class_r_astar__planner_1_1_r_astar_planner_r_o_s_a5bb178849971d2425519d247874cfbd9}{map\+To\+World} (double mx, double my, double \&wx, double \&wy)
+\begin{DoxyCompactList}\small\item\em Convert costmap to world coordinates based on origin and resolution. \end{DoxyCompactList}\item 
+vector$<$ int $>$ \hyperlink{class_r_astar__planner_1_1_r_astar_planner_r_o_s_a4eb4df0ea9159a6bc3ec1f2ee5467e48}{R\+Astar\+Planner} (int start\+Cell, int goal\+Cell)
+\begin{DoxyCompactList}\small\item\em Find best path from start to goal and time how long it took. \end{DoxyCompactList}\item 
+vector$<$ int $>$ \hyperlink{class_r_astar__planner_1_1_r_astar_planner_r_o_s_a6104dbbc687dced899ca220fa4ca2166}{find\+Path} (int start\+Cell, int goal\+Cell, float g\+\_\+score\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Run through algorithm to find path to goal, update open list and cost scores. \end{DoxyCompactList}\item 
+vector$<$ int $>$ \hyperlink{class_r_astar__planner_1_1_r_astar_planner_r_o_s_a9137b395e9984141728feaa096858ef0}{construct\+Path} (int start\+Cell, int goal\+Cell, float g\+\_\+score\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Construct the path given start, goal, and gscores from find\+Path. \end{DoxyCompactList}\item 
+float \hyperlink{class_r_astar__planner_1_1_r_astar_planner_r_o_s_a723d289d6debbf185e8a0e8430a0a4d7}{calculate\+H\+Cost} (int cell\+ID, int goal\+Cell)
+\begin{DoxyCompactList}\small\item\em Calculate Heuristic cost. \end{DoxyCompactList}\item 
+void \hyperlink{class_r_astar__planner_1_1_r_astar_planner_r_o_s_a16d9f8d214db7aa9c42faade56580b83}{add\+Neighbor\+Cell\+To\+Open\+List} (multiset$<$ \hyperlink{structcells}{cells} $>$ \&O\+PL, int neighbor\+Cell, int goal\+Cell, float g\+\_\+score\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em Add a cell to the Open List. \end{DoxyCompactList}\item 
+vector$<$ int $>$ \hyperlink{class_r_astar__planner_1_1_r_astar_planner_r_o_s_a381bf5111ed9e58aa9dd0c6ff08c34a9}{find\+Free\+Neighbor\+Cell} (int Cell\+ID)
+\begin{DoxyCompactList}\small\item\em Find free neighbors of current cell. \end{DoxyCompactList}\item 
+bool \hyperlink{class_r_astar__planner_1_1_r_astar_planner_r_o_s_a6c34ac7de619dc756a8598f8e81bfaac}{is\+Start\+And\+Goal\+Cells\+Valid} (int start\+Cell, int goal\+Cell)
+\begin{DoxyCompactList}\small\item\em Checks if start and goal are valid cells. \end{DoxyCompactList}\item 
+float \hyperlink{class_r_astar__planner_1_1_r_astar_planner_r_o_s_a2835ea7684c39af99ce0f6acdb6b16ac}{get\+Move\+Cost} (int Cell\+I\+D1, int Cell\+I\+D2)
+\begin{DoxyCompactList}\small\item\em Get the cost given two cell Ids. Get points and use other get\+Move\+Cost function. \end{DoxyCompactList}\item 
+float \hyperlink{class_r_astar__planner_1_1_r_astar_planner_r_o_s_adf21053b27e33f30df2dea62f910481c}{get\+Move\+Cost} (int i1, int j1, int i2, int j2)
+\begin{DoxyCompactList}\small\item\em Get the move cost given two cells, four points (x,y) \end{DoxyCompactList}\item 
+bool \hyperlink{class_r_astar__planner_1_1_r_astar_planner_r_o_s_a2993e43fb09446c21df27735986e13c1}{is\+Free} (int Cell\+ID)
+\begin{DoxyCompactList}\small\item\em Check if a cell is free from cell ID. \end{DoxyCompactList}\item 
+bool \hyperlink{class_r_astar__planner_1_1_r_astar_planner_r_o_s_a1648d66652edcba3b73284af7f5b7c18}{is\+Free} (int i, int j)
+\begin{DoxyCompactList}\small\item\em Check if a cell is free from i,j point. \end{DoxyCompactList}\item 
+int \hyperlink{class_r_astar__planner_1_1_r_astar_planner_r_o_s_ade7b3d65aa5e97588a58e968852cc279}{get\+Cell\+Index} (int i, int j)
+\begin{DoxyCompactList}\small\item\em Get cell index from point i,j and width. \end{DoxyCompactList}\item 
+int \hyperlink{class_r_astar__planner_1_1_r_astar_planner_r_o_s_af17757b32cb946011d64fa9478395bdf}{get\+Cell\+Row\+ID} (int index)
+\begin{DoxyCompactList}\small\item\em Get row id for cell given index, using width. \end{DoxyCompactList}\item 
+int \hyperlink{class_r_astar__planner_1_1_r_astar_planner_r_o_s_ae6ea4452952f573c9554b9680c2e9d3d}{get\+Cell\+Col\+ID} (int index)
+\begin{DoxyCompactList}\small\item\em Get column id for cell given index, using width. \end{DoxyCompactList}\item 
+void \hyperlink{class_r_astar__planner_1_1_r_astar_planner_r_o_s_a0ea613cb0c57682fd0ce840bbf5ed1d5}{publish\+Plan} (const std\+::vector$<$ geometry\+\_\+msgs\+::\+Pose\+Stamped $>$ \&path, double r, double g, double b, double a)
+\begin{DoxyCompactList}\small\item\em Publish the final path. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+ros\+::\+Publisher {\bfseries plan\+\_\+pub\+\_\+}\hypertarget{class_r_astar__planner_1_1_r_astar_planner_r_o_s_a53d1415cf583098e3e9444d6258e1677}{}\label{class_r_astar__planner_1_1_r_astar_planner_r_o_s_a53d1415cf583098e3e9444d6258e1677}
+
+\item 
+ros\+::\+Node\+Handle {\bfseries R\+O\+S\+Node\+Handle}\hypertarget{class_r_astar__planner_1_1_r_astar_planner_r_o_s_a7371972d6a02e857f3640b795c5ef11c}{}\label{class_r_astar__planner_1_1_r_astar_planner_r_o_s_a7371972d6a02e857f3640b795c5ef11c}
+
+\item 
+float {\bfseries originX}\hypertarget{class_r_astar__planner_1_1_r_astar_planner_r_o_s_ad2259dddb7800340bc6d5f89ebc4186b}{}\label{class_r_astar__planner_1_1_r_astar_planner_r_o_s_ad2259dddb7800340bc6d5f89ebc4186b}
+
+\item 
+float {\bfseries originY}\hypertarget{class_r_astar__planner_1_1_r_astar_planner_r_o_s_a94427d193482b1c34b3db7ae2bfb8155}{}\label{class_r_astar__planner_1_1_r_astar_planner_r_o_s_a94427d193482b1c34b3db7ae2bfb8155}
+
+\item 
+float {\bfseries resolution}\hypertarget{class_r_astar__planner_1_1_r_astar_planner_r_o_s_a651c37170c82d3b116961a9ba1ccea6e}{}\label{class_r_astar__planner_1_1_r_astar_planner_r_o_s_a651c37170c82d3b116961a9ba1ccea6e}
+
+\item 
+costmap\+\_\+2d\+::\+Costmap2\+D\+R\+OS $\ast$ {\bfseries costmap\+\_\+ros\+\_\+}\hypertarget{class_r_astar__planner_1_1_r_astar_planner_r_o_s_a7bec96cd0f94ecb17f98e206e46e461b}{}\label{class_r_astar__planner_1_1_r_astar_planner_r_o_s_a7bec96cd0f94ecb17f98e206e46e461b}
+
+\item 
+double {\bfseries step\+\_\+size\+\_\+}\hypertarget{class_r_astar__planner_1_1_r_astar_planner_r_o_s_ab9efb9a5f82f7c82c91f438c05a22c91}{}\label{class_r_astar__planner_1_1_r_astar_planner_r_o_s_ab9efb9a5f82f7c82c91f438c05a22c91}
+
+\item 
+double {\bfseries min\+\_\+dist\+\_\+from\+\_\+robot\+\_\+}\hypertarget{class_r_astar__planner_1_1_r_astar_planner_r_o_s_a0dc442aa982d3fdedb8dbbc22b28a470}{}\label{class_r_astar__planner_1_1_r_astar_planner_r_o_s_a0dc442aa982d3fdedb8dbbc22b28a470}
+
+\item 
+costmap\+\_\+2d\+::\+Costmap2D $\ast$ {\bfseries costmap\+\_\+}\hypertarget{class_r_astar__planner_1_1_r_astar_planner_r_o_s_a8e9d61f1082f16a9bedb7f038fa090ed}{}\label{class_r_astar__planner_1_1_r_astar_planner_r_o_s_a8e9d61f1082f16a9bedb7f038fa090ed}
+
+\item 
+bool {\bfseries initialized\+\_\+}\hypertarget{class_r_astar__planner_1_1_r_astar_planner_r_o_s_a01c6678d519c4f7667747ea21dccd8ba}{}\label{class_r_astar__planner_1_1_r_astar_planner_r_o_s_a01c6678d519c4f7667747ea21dccd8ba}
+
+\item 
+int {\bfseries width}\hypertarget{class_r_astar__planner_1_1_r_astar_planner_r_o_s_accbb5d01b9d9630eb906c71fb255dd0d}{}\label{class_r_astar__planner_1_1_r_astar_planner_r_o_s_accbb5d01b9d9630eb906c71fb255dd0d}
+
+\item 
+int {\bfseries height}\hypertarget{class_r_astar__planner_1_1_r_astar_planner_r_o_s_ab200f89722ca863dff4daf8ea25fd910}{}\label{class_r_astar__planner_1_1_r_astar_planner_r_o_s_ab200f89722ca863dff4daf8ea25fd910}
+
+\item 
+bool $\ast$ {\bfseries O\+GM}\hypertarget{class_r_astar__planner_1_1_r_astar_planner_r_o_s_a873e16d6355ad94a276f4795bb450141}{}\label{class_r_astar__planner_1_1_r_astar_planner_r_o_s_a873e16d6355ad94a276f4795bb450141}
+
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\index{R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+OS@{R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+OS}!add\+Neighbor\+Cell\+To\+Open\+List@{add\+Neighbor\+Cell\+To\+Open\+List}}
+\index{add\+Neighbor\+Cell\+To\+Open\+List@{add\+Neighbor\+Cell\+To\+Open\+List}!R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+OS@{R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+OS}}
+\subsubsection[{\texorpdfstring{add\+Neighbor\+Cell\+To\+Open\+List(multiset$<$ cells $>$ \&\+O\+P\+L, int neighbor\+Cell, int goal\+Cell, float g\+\_\+score[])}{addNeighborCellToOpenList(multiset< cells > &OPL, int neighborCell, int goalCell, float g_score[])}}]{\setlength{\rightskip}{0pt plus 5cm}void R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+O\+S\+::add\+Neighbor\+Cell\+To\+Open\+List (
+\begin{DoxyParamCaption}
+\item[{multiset$<$ {\bf cells} $>$ \&}]{O\+PL, }
+\item[{int}]{neighbor\+Cell, }
+\item[{int}]{goal\+Cell, }
+\item[{float}]{g\+\_\+score\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}\hypertarget{class_r_astar__planner_1_1_r_astar_planner_r_o_s_a16d9f8d214db7aa9c42faade56580b83}{}\label{class_r_astar__planner_1_1_r_astar_planner_r_o_s_a16d9f8d214db7aa9c42faade56580b83}
+
+
+Add a cell to the Open List. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em O\+PL} & in multiset cells \\
+\hline
+{\em neighbor\+Cell} & in int \\
+\hline
+{\em goal\+Cell} & in int \\
+\hline
+{\em g\+\_\+score} & in float \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\index{R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+OS@{R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+OS}!calculate\+H\+Cost@{calculate\+H\+Cost}}
+\index{calculate\+H\+Cost@{calculate\+H\+Cost}!R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+OS@{R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+OS}}
+\subsubsection[{\texorpdfstring{calculate\+H\+Cost(int cell\+I\+D, int goal\+Cell)}{calculateHCost(int cellID, int goalCell)}}]{\setlength{\rightskip}{0pt plus 5cm}float R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+O\+S\+::calculate\+H\+Cost (
+\begin{DoxyParamCaption}
+\item[{int}]{cell\+ID, }
+\item[{int}]{goal\+Cell}
+\end{DoxyParamCaption}
+)}\hypertarget{class_r_astar__planner_1_1_r_astar_planner_r_o_s_a723d289d6debbf185e8a0e8430a0a4d7}{}\label{class_r_astar__planner_1_1_r_astar_planner_r_o_s_a723d289d6debbf185e8a0e8430a0a4d7}
+
+
+Calculate Heuristic cost. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cell\+ID} & in int \\
+\hline
+{\em goal\+Cell} & in int\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+float Hueristic cost 
+\end{DoxyReturn}
+\index{R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+OS@{R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+OS}!construct\+Path@{construct\+Path}}
+\index{construct\+Path@{construct\+Path}!R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+OS@{R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+OS}}
+\subsubsection[{\texorpdfstring{construct\+Path(int start\+Cell, int goal\+Cell, float g\+\_\+score[])}{constructPath(int startCell, int goalCell, float g_score[])}}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ int $>$ R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+O\+S\+::construct\+Path (
+\begin{DoxyParamCaption}
+\item[{int}]{start\+Cell, }
+\item[{int}]{goal\+Cell, }
+\item[{float}]{g\+\_\+score\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}\hypertarget{class_r_astar__planner_1_1_r_astar_planner_r_o_s_a9137b395e9984141728feaa096858ef0}{}\label{class_r_astar__planner_1_1_r_astar_planner_r_o_s_a9137b395e9984141728feaa096858ef0}
+
+
+Construct the path given start, goal, and gscores from find\+Path. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start\+Cell} & in int \\
+\hline
+{\em goal\+Cell} & in int \\
+\hline
+{\em g\+\_\+score} & in float \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+best\+Path in vector int 
+\end{DoxyReturn}
+\index{R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+OS@{R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+OS}!convert\+To\+Cell\+Index@{convert\+To\+Cell\+Index}}
+\index{convert\+To\+Cell\+Index@{convert\+To\+Cell\+Index}!R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+OS@{R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+OS}}
+\subsubsection[{\texorpdfstring{convert\+To\+Cell\+Index(float x, float y)}{convertToCellIndex(float x, float y)}}]{\setlength{\rightskip}{0pt plus 5cm}int R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+O\+S\+::convert\+To\+Cell\+Index (
+\begin{DoxyParamCaption}
+\item[{float}]{x, }
+\item[{float}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{class_r_astar__planner_1_1_r_astar_planner_r_o_s_a50f7adc635522b9ea7f5348870b7ca6e}{}\label{class_r_astar__planner_1_1_r_astar_planner_r_o_s_a50f7adc635522b9ea7f5348870b7ca6e}
+
+
+Get cell index based on x,y and resolution. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & in float \\
+\hline
+{\em y} & in float\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+cell index in int 
+\end{DoxyReturn}
+\index{R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+OS@{R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+OS}!convert\+To\+Coordinate@{convert\+To\+Coordinate}}
+\index{convert\+To\+Coordinate@{convert\+To\+Coordinate}!R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+OS@{R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+OS}}
+\subsubsection[{\texorpdfstring{convert\+To\+Coordinate(int index, float \&x, float \&y)}{convertToCoordinate(int index, float &x, float &y)}}]{\setlength{\rightskip}{0pt plus 5cm}void R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+O\+S\+::convert\+To\+Coordinate (
+\begin{DoxyParamCaption}
+\item[{int}]{index, }
+\item[{float \&}]{x, }
+\item[{float \&}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{class_r_astar__planner_1_1_r_astar_planner_r_o_s_a1046296d428b694e517ef25cac423846}{}\label{class_r_astar__planner_1_1_r_astar_planner_r_o_s_a1046296d428b694e517ef25cac423846}
+
+
+Convert to coordinate base on x,y, origin location, and id index. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & in int \\
+\hline
+{\em x} & in float \\
+\hline
+{\em y} & in float \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\index{R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+OS@{R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+OS}!find\+Free\+Neighbor\+Cell@{find\+Free\+Neighbor\+Cell}}
+\index{find\+Free\+Neighbor\+Cell@{find\+Free\+Neighbor\+Cell}!R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+OS@{R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+OS}}
+\subsubsection[{\texorpdfstring{find\+Free\+Neighbor\+Cell(int Cell\+I\+D)}{findFreeNeighborCell(int CellID)}}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ int $>$ R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+O\+S\+::find\+Free\+Neighbor\+Cell (
+\begin{DoxyParamCaption}
+\item[{int}]{Cell\+ID}
+\end{DoxyParamCaption}
+)}\hypertarget{class_r_astar__planner_1_1_r_astar_planner_r_o_s_a381bf5111ed9e58aa9dd0c6ff08c34a9}{}\label{class_r_astar__planner_1_1_r_astar_planner_r_o_s_a381bf5111ed9e58aa9dd0c6ff08c34a9}
+
+
+Find free neighbors of current cell. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em cell\+ID} & in int \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Free neighbors cells in vector int 
+\end{DoxyReturn}
+\index{R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+OS@{R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+OS}!find\+Path@{find\+Path}}
+\index{find\+Path@{find\+Path}!R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+OS@{R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+OS}}
+\subsubsection[{\texorpdfstring{find\+Path(int start\+Cell, int goal\+Cell, float g\+\_\+score[])}{findPath(int startCell, int goalCell, float g_score[])}}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ int $>$ R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+O\+S\+::find\+Path (
+\begin{DoxyParamCaption}
+\item[{int}]{start\+Cell, }
+\item[{int}]{goal\+Cell, }
+\item[{float}]{g\+\_\+score\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}\hypertarget{class_r_astar__planner_1_1_r_astar_planner_r_o_s_a6104dbbc687dced899ca220fa4ca2166}{}\label{class_r_astar__planner_1_1_r_astar_planner_r_o_s_a6104dbbc687dced899ca220fa4ca2166}
+
+
+Run through algorithm to find path to goal, update open list and cost scores. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start\+Cell} & in int \\
+\hline
+{\em goal\+Cell} & in int \\
+\hline
+{\em g\+\_\+score} & in float \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+best\+Path in vector int 
+\end{DoxyReturn}
+\index{R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+OS@{R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+OS}!get\+Cell\+Col\+ID@{get\+Cell\+Col\+ID}}
+\index{get\+Cell\+Col\+ID@{get\+Cell\+Col\+ID}!R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+OS@{R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+OS}}
+\subsubsection[{\texorpdfstring{get\+Cell\+Col\+I\+D(int index)}{getCellColID(int index)}}]{\setlength{\rightskip}{0pt plus 5cm}int R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+O\+S\+::get\+Cell\+Col\+ID (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}\hypertarget{class_r_astar__planner_1_1_r_astar_planner_r_o_s_ae6ea4452952f573c9554b9680c2e9d3d}{}\label{class_r_astar__planner_1_1_r_astar_planner_r_o_s_ae6ea4452952f573c9554b9680c2e9d3d}
+
+
+Get column id for cell given index, using width. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & in int \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+cell column id in int 
+\end{DoxyReturn}
+\index{R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+OS@{R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+OS}!get\+Cell\+Index@{get\+Cell\+Index}}
+\index{get\+Cell\+Index@{get\+Cell\+Index}!R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+OS@{R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+OS}}
+\subsubsection[{\texorpdfstring{get\+Cell\+Index(int i, int j)}{getCellIndex(int i, int j)}}]{\setlength{\rightskip}{0pt plus 5cm}int R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+O\+S\+::get\+Cell\+Index (
+\begin{DoxyParamCaption}
+\item[{int}]{i, }
+\item[{int}]{j}
+\end{DoxyParamCaption}
+)}\hypertarget{class_r_astar__planner_1_1_r_astar_planner_r_o_s_ade7b3d65aa5e97588a58e968852cc279}{}\label{class_r_astar__planner_1_1_r_astar_planner_r_o_s_ade7b3d65aa5e97588a58e968852cc279}
+
+
+Get cell index from point i,j and width. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & in int \\
+\hline
+{\em j} & in int \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+cell index in int 
+\end{DoxyReturn}
+\index{R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+OS@{R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+OS}!get\+Cell\+Row\+ID@{get\+Cell\+Row\+ID}}
+\index{get\+Cell\+Row\+ID@{get\+Cell\+Row\+ID}!R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+OS@{R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+OS}}
+\subsubsection[{\texorpdfstring{get\+Cell\+Row\+I\+D(int index)}{getCellRowID(int index)}}]{\setlength{\rightskip}{0pt plus 5cm}int R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+O\+S\+::get\+Cell\+Row\+ID (
+\begin{DoxyParamCaption}
+\item[{int}]{index}
+\end{DoxyParamCaption}
+)}\hypertarget{class_r_astar__planner_1_1_r_astar_planner_r_o_s_af17757b32cb946011d64fa9478395bdf}{}\label{class_r_astar__planner_1_1_r_astar_planner_r_o_s_af17757b32cb946011d64fa9478395bdf}
+
+
+Get row id for cell given index, using width. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & in int \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+cell row id in int 
+\end{DoxyReturn}
+\index{R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+OS@{R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+OS}!get\+Corrdinate@{get\+Corrdinate}}
+\index{get\+Corrdinate@{get\+Corrdinate}!R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+OS@{R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+OS}}
+\subsubsection[{\texorpdfstring{get\+Corrdinate(float \&x, float \&y)}{getCorrdinate(float &x, float &y)}}]{\setlength{\rightskip}{0pt plus 5cm}void R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+O\+S\+::get\+Corrdinate (
+\begin{DoxyParamCaption}
+\item[{float \&}]{x, }
+\item[{float \&}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{class_r_astar__planner_1_1_r_astar_planner_r_o_s_abbc4c3daf28590f0d5e45c8227b7ff9e}{}\label{class_r_astar__planner_1_1_r_astar_planner_r_o_s_abbc4c3daf28590f0d5e45c8227b7ff9e}
+
+
+Get cooridnate based on x,y position and origin location. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em x} & in float \\
+\hline
+{\em y} & in float\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\index{R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+OS@{R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+OS}!get\+Move\+Cost@{get\+Move\+Cost}}
+\index{get\+Move\+Cost@{get\+Move\+Cost}!R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+OS@{R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+OS}}
+\subsubsection[{\texorpdfstring{get\+Move\+Cost(int Cell\+I\+D1, int Cell\+I\+D2)}{getMoveCost(int CellID1, int CellID2)}}]{\setlength{\rightskip}{0pt plus 5cm}float R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+O\+S\+::get\+Move\+Cost (
+\begin{DoxyParamCaption}
+\item[{int}]{Cell\+I\+D1, }
+\item[{int}]{Cell\+I\+D2}
+\end{DoxyParamCaption}
+)}\hypertarget{class_r_astar__planner_1_1_r_astar_planner_r_o_s_a2835ea7684c39af99ce0f6acdb6b16ac}{}\label{class_r_astar__planner_1_1_r_astar_planner_r_o_s_a2835ea7684c39af99ce0f6acdb6b16ac}
+
+
+Get the cost given two cell Ids. Get points and use other get\+Move\+Cost function. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Cell\+I\+D1} & in int \\
+\hline
+{\em cell\+I\+D2} & in int \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+move\+Cost in float 
+\end{DoxyReturn}
+\index{R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+OS@{R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+OS}!get\+Move\+Cost@{get\+Move\+Cost}}
+\index{get\+Move\+Cost@{get\+Move\+Cost}!R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+OS@{R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+OS}}
+\subsubsection[{\texorpdfstring{get\+Move\+Cost(int i1, int j1, int i2, int j2)}{getMoveCost(int i1, int j1, int i2, int j2)}}]{\setlength{\rightskip}{0pt plus 5cm}float R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+O\+S\+::get\+Move\+Cost (
+\begin{DoxyParamCaption}
+\item[{int}]{i1, }
+\item[{int}]{j1, }
+\item[{int}]{i2, }
+\item[{int}]{j2}
+\end{DoxyParamCaption}
+)}\hypertarget{class_r_astar__planner_1_1_r_astar_planner_r_o_s_adf21053b27e33f30df2dea62f910481c}{}\label{class_r_astar__planner_1_1_r_astar_planner_r_o_s_adf21053b27e33f30df2dea62f910481c}
+
+
+Get the move cost given two cells, four points (x,y) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i1} & in int \\
+\hline
+{\em j1} & in int \\
+\hline
+{\em i2} & in int \\
+\hline
+{\em j2} & in int \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+move\+Cost in float 
+\end{DoxyReturn}
+\index{R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+OS@{R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+OS}!initialize@{initialize}}
+\index{initialize@{initialize}!R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+OS@{R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+OS}}
+\subsubsection[{\texorpdfstring{initialize(std\+::string name, costmap\+\_\+2d\+::\+Costmap2\+D\+R\+O\+S $\ast$costmap\+\_\+ros)}{initialize(std::string name, costmap_2d::Costmap2DROS *costmap_ros)}}]{\setlength{\rightskip}{0pt plus 5cm}void R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+O\+S\+::initialize (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{name, }
+\item[{costmap\+\_\+2d\+::\+Costmap2\+D\+R\+OS $\ast$}]{costmap\+\_\+ros}
+\end{DoxyParamCaption}
+)}\hypertarget{class_r_astar__planner_1_1_r_astar_planner_r_o_s_aed71ff1907cf853c7e49e78d3f82a94b}{}\label{class_r_astar__planner_1_1_r_astar_planner_r_o_s_aed71ff1907cf853c7e49e78d3f82a94b}
+
+
+Initialize planner. 
+
+overriden classes from interface nav\+\_\+core\+::\+Base\+Global\+Planner 
+\begin{DoxyParams}{Parameters}
+{\em name} & in string \\
+\hline
+{\em costmap} & from costmap\+\_\+2s\+::\+Costmap2\+D\+R\+OS \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\index{R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+OS@{R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+OS}!is\+Cell\+Inside\+Map@{is\+Cell\+Inside\+Map}}
+\index{is\+Cell\+Inside\+Map@{is\+Cell\+Inside\+Map}!R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+OS@{R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+OS}}
+\subsubsection[{\texorpdfstring{is\+Cell\+Inside\+Map(float x, float y)}{isCellInsideMap(float x, float y)}}]{\setlength{\rightskip}{0pt plus 5cm}bool R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+O\+S\+::is\+Cell\+Inside\+Map (
+\begin{DoxyParamCaption}
+\item[{float}]{x, }
+\item[{float}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{class_r_astar__planner_1_1_r_astar_planner_r_o_s_a1d3f1b7aed836e648645dd696823193b}{}\label{class_r_astar__planner_1_1_r_astar_planner_r_o_s_a1d3f1b7aed836e648645dd696823193b}
+
+
+Check if cell is in the map based on resolution, width, and height of map. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em float} & in x \\
+\hline
+{\em float} & in y\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true/false 
+\end{DoxyReturn}
+\index{R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+OS@{R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+OS}!is\+Free@{is\+Free}}
+\index{is\+Free@{is\+Free}!R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+OS@{R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+OS}}
+\subsubsection[{\texorpdfstring{is\+Free(int Cell\+I\+D)}{isFree(int CellID)}}]{\setlength{\rightskip}{0pt plus 5cm}bool R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+O\+S\+::is\+Free (
+\begin{DoxyParamCaption}
+\item[{int}]{Cell\+ID}
+\end{DoxyParamCaption}
+)}\hypertarget{class_r_astar__planner_1_1_r_astar_planner_r_o_s_a2993e43fb09446c21df27735986e13c1}{}\label{class_r_astar__planner_1_1_r_astar_planner_r_o_s_a2993e43fb09446c21df27735986e13c1}
+
+
+Check if a cell is free from cell ID. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Cell\+ID} & in int \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true/false 
+\end{DoxyReturn}
+\index{R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+OS@{R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+OS}!is\+Free@{is\+Free}}
+\index{is\+Free@{is\+Free}!R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+OS@{R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+OS}}
+\subsubsection[{\texorpdfstring{is\+Free(int i, int j)}{isFree(int i, int j)}}]{\setlength{\rightskip}{0pt plus 5cm}bool R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+O\+S\+::is\+Free (
+\begin{DoxyParamCaption}
+\item[{int}]{i, }
+\item[{int}]{j}
+\end{DoxyParamCaption}
+)}\hypertarget{class_r_astar__planner_1_1_r_astar_planner_r_o_s_a1648d66652edcba3b73284af7f5b7c18}{}\label{class_r_astar__planner_1_1_r_astar_planner_r_o_s_a1648d66652edcba3b73284af7f5b7c18}
+
+
+Check if a cell is free from i,j point. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em i} & in int \\
+\hline
+{\em j} & in int \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true/false 
+\end{DoxyReturn}
+\index{R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+OS@{R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+OS}!is\+Start\+And\+Goal\+Cells\+Valid@{is\+Start\+And\+Goal\+Cells\+Valid}}
+\index{is\+Start\+And\+Goal\+Cells\+Valid@{is\+Start\+And\+Goal\+Cells\+Valid}!R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+OS@{R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+OS}}
+\subsubsection[{\texorpdfstring{is\+Start\+And\+Goal\+Cells\+Valid(int start\+Cell, int goal\+Cell)}{isStartAndGoalCellsValid(int startCell, int goalCell)}}]{\setlength{\rightskip}{0pt plus 5cm}bool R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+O\+S\+::is\+Start\+And\+Goal\+Cells\+Valid (
+\begin{DoxyParamCaption}
+\item[{int}]{start\+Cell, }
+\item[{int}]{goal\+Cell}
+\end{DoxyParamCaption}
+)}\hypertarget{class_r_astar__planner_1_1_r_astar_planner_r_o_s_a6c34ac7de619dc756a8598f8e81bfaac}{}\label{class_r_astar__planner_1_1_r_astar_planner_r_o_s_a6c34ac7de619dc756a8598f8e81bfaac}
+
+
+Checks if start and goal are valid cells. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start\+Cell} & in int \\
+\hline
+{\em goal\+Cell} & in int \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true/false 
+\end{DoxyReturn}
+\index{R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+OS@{R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+OS}!make\+Plan@{make\+Plan}}
+\index{make\+Plan@{make\+Plan}!R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+OS@{R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+OS}}
+\subsubsection[{\texorpdfstring{make\+Plan(const geometry\+\_\+msgs\+::\+Pose\+Stamped \&start, const geometry\+\_\+msgs\+::\+Pose\+Stamped \&goal, std\+::vector$<$ geometry\+\_\+msgs\+::\+Pose\+Stamped $>$ \&plan)}{makePlan(const geometry_msgs::PoseStamped &start, const geometry_msgs::PoseStamped &goal, std::vector< geometry_msgs::PoseStamped > &plan)}}]{\setlength{\rightskip}{0pt plus 5cm}bool R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+O\+S\+::make\+Plan (
+\begin{DoxyParamCaption}
+\item[{const geometry\+\_\+msgs\+::\+Pose\+Stamped \&}]{start, }
+\item[{const geometry\+\_\+msgs\+::\+Pose\+Stamped \&}]{goal, }
+\item[{std\+::vector$<$ geometry\+\_\+msgs\+::\+Pose\+Stamped $>$ \&}]{plan}
+\end{DoxyParamCaption}
+)}\hypertarget{class_r_astar__planner_1_1_r_astar_planner_r_o_s_acdc8059b6324f030c47ec2322f69f658}{}\label{class_r_astar__planner_1_1_r_astar_planner_r_o_s_acdc8059b6324f030c47ec2322f69f658}
+
+
+Create a plan given a start and goal. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start} & in geometry message/\+Posestamped \\
+\hline
+{\em start} & in geometry message/\+Posestamped \\
+\hline
+{\em plan} & in vector of geometry messages/\+Posestamped \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true/false 
+\end{DoxyReturn}
+\index{R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+OS@{R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+OS}!map\+To\+World@{map\+To\+World}}
+\index{map\+To\+World@{map\+To\+World}!R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+OS@{R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+OS}}
+\subsubsection[{\texorpdfstring{map\+To\+World(double mx, double my, double \&wx, double \&wy)}{mapToWorld(double mx, double my, double &wx, double &wy)}}]{\setlength{\rightskip}{0pt plus 5cm}void R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+O\+S\+::map\+To\+World (
+\begin{DoxyParamCaption}
+\item[{double}]{mx, }
+\item[{double}]{my, }
+\item[{double \&}]{wx, }
+\item[{double \&}]{wy}
+\end{DoxyParamCaption}
+)}\hypertarget{class_r_astar__planner_1_1_r_astar_planner_r_o_s_a5bb178849971d2425519d247874cfbd9}{}\label{class_r_astar__planner_1_1_r_astar_planner_r_o_s_a5bb178849971d2425519d247874cfbd9}
+
+
+Convert costmap to world coordinates based on origin and resolution. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mx} & in double \\
+\hline
+{\em my} & in double \\
+\hline
+{\em wx} & in double \\
+\hline
+{\em wy} & in double \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\index{R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+OS@{R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+OS}!publish\+Plan@{publish\+Plan}}
+\index{publish\+Plan@{publish\+Plan}!R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+OS@{R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+OS}}
+\subsubsection[{\texorpdfstring{publish\+Plan(const std\+::vector$<$ geometry\+\_\+msgs\+::\+Pose\+Stamped $>$ \&path, double r, double g, double b, double a)}{publishPlan(const std::vector< geometry_msgs::PoseStamped > &path, double r, double g, double b, double a)}}]{\setlength{\rightskip}{0pt plus 5cm}void R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+O\+S\+::publish\+Plan (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ geometry\+\_\+msgs\+::\+Pose\+Stamped $>$ \&}]{path, }
+\item[{double}]{r, }
+\item[{double}]{g, }
+\item[{double}]{b, }
+\item[{double}]{a}
+\end{DoxyParamCaption}
+)}\hypertarget{class_r_astar__planner_1_1_r_astar_planner_r_o_s_a0ea613cb0c57682fd0ce840bbf5ed1d5}{}\label{class_r_astar__planner_1_1_r_astar_planner_r_o_s_a0ea613cb0c57682fd0ce840bbf5ed1d5}
+
+
+Publish the final path. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em path} & in geometry messages/pose\+Stamped \\
+\hline
+{\em r} & in double \\
+\hline
+{\em g} & in double \\
+\hline
+{\em b} & in double \\
+\hline
+{\em a} & in double \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+none 
+\end{DoxyReturn}
+\index{R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+OS@{R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+OS}!R\+Astar\+Planner@{R\+Astar\+Planner}}
+\index{R\+Astar\+Planner@{R\+Astar\+Planner}!R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+OS@{R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+OS}}
+\subsubsection[{\texorpdfstring{R\+Astar\+Planner(int start\+Cell, int goal\+Cell)}{RAstarPlanner(int startCell, int goalCell)}}]{\setlength{\rightskip}{0pt plus 5cm}vector$<$ int $>$ R\+Astar\+\_\+planner\+::\+R\+Astar\+Planner\+R\+O\+S\+::\+R\+Astar\+Planner (
+\begin{DoxyParamCaption}
+\item[{int}]{start\+Cell, }
+\item[{int}]{goal\+Cell}
+\end{DoxyParamCaption}
+)}\hypertarget{class_r_astar__planner_1_1_r_astar_planner_r_o_s_a4eb4df0ea9159a6bc3ec1f2ee5467e48}{}\label{class_r_astar__planner_1_1_r_astar_planner_r_o_s_a4eb4df0ea9159a6bc3ec1f2ee5467e48}
+
+
+Find best path from start to goal and time how long it took. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em start\+Cell} & in int \\
+\hline
+{\em goal\+Cell} & in int\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+best\+Path in vector int 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/smart\+A\+G\+V/\hyperlink{_r_astar_8h}{R\+Astar.\+h}\item 
+src/\hyperlink{_r_astar_8cpp}{R\+Astar.\+cpp}\end{DoxyCompactItemize}
