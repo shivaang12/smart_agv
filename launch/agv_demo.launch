@@ -1,0 +1,11 @@
+<launch>
+  <arg name="rec" default="false"/>
+
+  <include file="$(find smartagv)/launch/gazebo.launch"/>
+
+  <node name="smartagv" pkg="smartagv" type="smartagv" output="screen">
+  </node>
+
+  <node pkg="rosbag" name="record" type="record" args="--duration=60.0 -a -O $(find smartagv)/results/session.bag -x /camera/(.*) " if="$(arg rec)">
+  </node>
+</launch>
