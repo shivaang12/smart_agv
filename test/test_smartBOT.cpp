@@ -1,24 +1,28 @@
 /********************************************************************
  *   MIT License
- *  
+ *
  *   Copyright (c) 2018 Shivang Patel
- *  
+ *
  *  Permission is hereby granted, free of charge, to any person obtaining a copy
- *  of this software and associated documentation files (the "Software"), to deal
+ *  of this software and associated documentation files (the "Software"), to
+ *deal
  *  in the Software without restriction, including without limitation the rights
  *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  *  copies of the Software, and to permit persons to whom the Software is
  *  furnished to do so, subject to the following conditions:
- *  
- *  The above copyright notice and this permission notice shall be included in all
+ *
+ *  The above copyright notice and this permission notice shall be included in
+ *all
  *  copies or substantial portions of the Software.
- *  
+ *
  *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  *  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
  *  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- *  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+ *  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+ *FROM,
+ *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ *THE
  *  SOFTWARE.
  ********************************************************************/
 
@@ -30,15 +34,15 @@
  *  @author Shivang Patel
 */
 
-#include <stdlib.h>
-#include <ros/ros.h>
-#include <ros/package.h>
-#include <std_msgs/String.h>
 #include <gtest/gtest.h>
+#include <ros/package.h>
+#include <ros/ros.h>
+#include <std_msgs/String.h>
+#include <stdlib.h>
 #include <sstream>
-#include <boost/thread.hpp>
-#include "test_class.hpp"
 #include <smartAGV/smartBOT.hpp>
+#include "test_class.hpp"
+#include <boost/thread.hpp>
 
 void threadSpinning(void) {
   ros::Rate loop_rate(10);
@@ -61,8 +65,7 @@ TEST(TestServiceBot, testDefault) {
                                     &TestClass::TestAgvCallback, &testVar);
 
   // register to check number of subscribers to /servicebot/command
-  ros::Publisher pub =
-      n.advertise<std_msgs::String>("/smartbot/command", 1000);
+  ros::Publisher pub = n.advertise<std_msgs::String>("/smartbot/command", 1000);
 
   loop_rate.sleep();
 
@@ -117,24 +120,21 @@ TEST(TestServiceBot, testMoveToCommand) {
   ros::Rate loop_rate(2);
 
   // Register to publish topic
-  ros::Publisher pub =
-      n.advertise<std_msgs::String>("/smartbot/command", 1000);
+  ros::Publisher pub = n.advertise<std_msgs::String>("/smartbot/command", 1000);
 
   // Subscribe to check goal and cancel commands received by movebase
-  ros::Subscriber MBsubGoal =
-      n.subscribe("/move_base/goal", 1000,
-                  &TestClass::TestMoveBaseGoal, &testVar);
+  ros::Subscriber MBsubGoal = n.subscribe(
+      "/move_base/goal", 1000, &TestClass::TestMoveBaseGoal, &testVar);
 
-  ros::Subscriber MBsubCancel =
-      n.subscribe("/move_base/cancel", 1000,
-                  &TestClass::TestMoveBaseCancelGoal, &testVar);
+  ros::Subscriber MBsubCancel = n.subscribe(
+      "/move_base/cancel", 1000, &TestClass::TestMoveBaseCancelGoal, &testVar);
 
   loop_rate.sleep();
 
   ROS_DEBUG_STREAM(
       "Test subMBGoal number of publisher = " << MBsubGoal.getNumPublishers());
-  ROS_DEBUG_STREAM(
-      "Test subMBCancel number of publisher = " << MBsubCancel.getNumPublishers());
+  ROS_DEBUG_STREAM("Test subMBCancel number of publisher = "
+                   << MBsubCancel.getNumPublishers());
 
   // test move to room a
   msg.data = "move to,storage";

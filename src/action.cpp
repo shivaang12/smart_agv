@@ -31,9 +31,9 @@
  *  @author Shivang Patel
 */
 
-#include <string>
 #include <ros/ros.h>
 #include <geometry_msgs/Pose.h>
+#include <string>
 #include <smartAGV/navigation.hpp>
 #include <smartAGV/action.hpp>
 
@@ -42,7 +42,6 @@ void Action::initialize(ros::NodeHandle &n) {
   nav.initialize(nodeHandle);
 }
 void Action::execute(int act, const std::string &arg) {
-  std::stringstream ss;
   action = act;
 
   ROS_INFO_STREAM("Action::" << action << " arg::" << arg);

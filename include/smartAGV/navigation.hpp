@@ -51,15 +51,51 @@ typedef actionlib::SimpleActionClient<move_base_msgs::MoveBaseAction>
  *  @brief Class definition of Navigation class
  */
 class Navigation {
-public:
+ public:
+  /**
+   * @brief  Constructor of Navigation class
+   *
+   * @param[in]  none
+   * 
+   * @return none
+   */
   Navigation() : mbClient("move_base", true) {}
+  /**
+   * @brief  This method intializes the default parametres for the classes.
+   *
+   * @param[in]  none
+   * 
+   * @return none
+   */
   void initialize(ros::NodeHandle &);
+  /**
+   * @brief  Send goal to movebase to navigate robot to goal location.
+   * 
+   * param[in]  geometry_msgs::Pose : Goal position.
+   * 
+   * @return none
+   */
   void goTO(geometry_msgs::Pose &);
+  /**
+   * @brief  This methods helps to abort the current goal task navigation.
+   * 
+   * param[in]  none
+   * 
+   * @return none
+   */
   void abortMove(void);
+  /**
+   * @brief  This is as Callback function to receive navigation result from
+   * movebase.           
+   * 
+   * param[in]  actionlib::SimpleClientGoalState : Goal state.
+   * param[in]  move_base_msgs::MoveBaseResult::ConstPtr : result in move base.
+   * @return none
+   */
   void movebaseCallback(const actionlib::SimpleClientGoalState &,
                         const move_base_msgs::MoveBaseResult::ConstPtr &);
 
-private:
-  ros::Publisher movebaseCmdVelPub;
-  MoveBaseClient mbClient;
+ private:
+  ros::Publisher movebaseCmdVelPub;   //> Ros publisher
+  MoveBaseClient mbClient;            //> Move base client
 };

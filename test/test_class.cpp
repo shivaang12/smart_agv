@@ -29,10 +29,10 @@
  * @author Shivang Patel
  */
 
-#include <algorithm>
 #include <ros/ros.h>
 #include <std_msgs/String.h>
 #include <move_base_msgs/MoveBaseActionGoal.h>
+#include <algorithm>
 #include "test_class.hpp"
 
 void TestClass::TestAgvCallback(const std_msgs::String::ConstPtr &msg) {

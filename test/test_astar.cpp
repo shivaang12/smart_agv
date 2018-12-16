@@ -33,8 +33,8 @@
 #include <ros/package.h>
 #include <std_msgs/String.h>
 #include <gtest/gtest.h>
-#include <sstream>
 #include <smartAGV/RAstar.h>
+#include <sstream>
 
 void threadSpinning(void) {
     ros::Rate loop_rate(10);
@@ -151,6 +151,7 @@ TEST(TestAstar, testFindFreeNeighborCell) {
     vector <int> nay;
     nay =  plan.findFreeNeighborCell(id);
     EXPECT_EQ(test, nay);
+    delete[] plan.OGM
 }
 
 
@@ -195,6 +196,7 @@ TEST(TestAstar, testFindPath) {
     bpath =  plan.findPath(startCell, endCell, g_score);
     // ROS_INFO("bpath2");
     EXPECT_EQ(test, bpath);
+    delete[] plan.OGM
 }
 
 
@@ -234,7 +236,6 @@ TEST(TestAstar, testAddNToCellOpenList) {
     plan.width = 5.0;
     plan.height = 5.0;
     int mapSize = plan.width*plan.height;
-    float infinity = std::numeric_limits< float >::infinity();
     float *g_score = new float[mapSize];
     for (uint i = 0; i < mapSize; i++)
         g_score[i] = 5;
@@ -288,6 +289,7 @@ TEST(TestAstar, testIsStartGoalValid) {
     EXPECT_EQ(false, plan.isStartAndGoalCellsValid(start3, goal3));
     EXPECT_EQ(false, plan.isStartAndGoalCellsValid(start4, goal4));
     EXPECT_EQ(true , plan.isStartAndGoalCellsValid(start5, goal5));
+    delete[] plan.OGM
 }
 
 
@@ -338,6 +340,7 @@ TEST(TestAstar, testIsFree) {
     plan.OGM[id] = false;
     EXPECT_EQ(true, plan.isFree(i, j));
     EXPECT_EQ(false, plan.isFree(id));
+    delete[] plan.OGM
     }
 
 /**

@@ -31,11 +31,11 @@
 */
 
 #include <stdlib.h>
-#include <sstream>
 #include <ros/ros.h>
 #include <ros/package.h>
 #include <std_msgs/String.h>
 #include <gtest/gtest.h>
+#include <sstream>
 #include <boost/thread.hpp>
 #include "test_class.hpp"
 #include <smartAGV/action.hpp>
@@ -83,7 +83,7 @@ TEST(TestAction, testGoTOAction) {
 
   auto MBsubCancel = n.subscribe("/move_base/cancel", 1000,
                                &TestClass::TestMoveBaseCancelGoal, &testVar);
-  
+
   act.execute(Action::ACT_MOVETO, "storage");
 
   loop_rate.sleep();
@@ -116,7 +116,7 @@ TEST(TestAction, testAbortMove) {
 
   auto MBsubCancel = n.subscribe("/move_base/cancel", 1000,
                                &TestClass::TestMoveBaseCancelGoal, &testVar);
-  
+
   act.execute(Action::ACT_MOVETO, "storage");
 
   loop_rate.sleep();

@@ -35,6 +35,7 @@
 #include <move_base_msgs/MoveBaseActionGoal.h>
 #include <geometry_msgs/Pose.h>
 #include <geometry_msgs/Twist.h>
+#include <string>
 
 /**
  * @brief Class definition for TestClass class.

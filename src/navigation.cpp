@@ -38,8 +38,8 @@
 #include <nav_msgs/Odometry.h>
 #include <move_base_msgs/MoveBaseAction.h>
 #include <actionlib/client/simple_action_client.h>
-#include <smartAGV/navigation.hpp>
 #include <iostream>
+#include <smartAGV/navigation.hpp>
 
 void Navigation::initialize(ros::NodeHandle &n) {
   ROS_INFO_STREAM("Navigation::initialize");
