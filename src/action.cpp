@@ -36,6 +36,7 @@
 #include <string>
 #include <smartAGV/navigation.hpp>
 #include <smartAGV/action.hpp>
+#include <smartAGV/location.hpp>
 
 void Action::initialize(ros::NodeHandle &n) {
   nodeHandle = n;
